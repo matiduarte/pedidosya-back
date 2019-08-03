@@ -1,0 +1,9 @@
+.vscode/
+node_modules
+/error.log
+npm-debug.log
+/error_search.log
+/error_server.log
+.DS_Store
+.vscode/
+.idea/
