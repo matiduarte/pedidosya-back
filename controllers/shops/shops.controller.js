@@ -1,12 +1,14 @@
 import Shops from '../../models';
 
-const mapShops = shop => ({
-  name: shop.name,
-  logo: shop.logo,
-  rating: shop.ratingScore,
-  deliveryTimeMinMinutes: shop.deliveryTimeMinMinutes,
-  deliveryTimeMaxMinutes: shop.deliveryTimeMaxMinutes,
-  paymentMethods: shop.paymentMethodsList.split(','),
+const mapShops = ({
+  name, logo, ratingScore, deliveryTimeMinMinutes, deliveryTimeMaxMinutes, paymentMethodsList,
+}) => ({
+  name,
+  logo: `https://d1v73nxuzaqxgd.cloudfront.net/restaurants/${logo}`,
+  rating: ratingScore,
+  deliveryTimeMinMinutes,
+  deliveryTimeMaxMinutes,
+  paymentMethods: paymentMethodsList.split(','),
 });
 
 export default {
