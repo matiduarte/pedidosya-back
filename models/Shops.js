@@ -4,6 +4,7 @@ import db from '../db/response';
 const { data } = db;
 const fuse = new Fuse(data, {
   shouldSort: true,
+  tokenize: true,
   threshold: 0.3,
   location: 0,
   distance: 0,

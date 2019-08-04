@@ -15,6 +15,6 @@ export default {
   getShops: (req, res) => {
     const { query } = req.query;
     const shops = Shops.search(query);
-    res.json({ data: { shops: shops.map(shop => mapShops(shop)) } });
+    res.json({ shops: shops.map(shop => mapShops(shop)) });
   },
 };
