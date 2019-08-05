@@ -21,6 +21,9 @@ const mockShop = {
     'Visa',
     'OCA',
   ],
+  discount: 0,
+  area: 'Centro',
+  city: 'Montevideo',
 };
 
 describe('SHOPS CONTROLLER', () => {
@@ -33,7 +36,7 @@ describe('SHOPS CONTROLLER', () => {
       request(server)
         .get('/api/v1/shops?query=esto no existe')
         .end((err, res) => {
-          assert.deepEqual(res.body.data.shops, []);
+          assert.deepEqual(res.body.shops, []);
           assert.equal(res.status, 200);
           resolve();
         });
@@ -44,7 +47,7 @@ describe('SHOPS CONTROLLER', () => {
       request(server)
         .get(`/api/v1/shops?query=${mockShop.name}`)
         .end((err, res) => {
-          const { shops } = res.body.data;
+          const { shops } = res.body;
           assert.deepEqual(shops[0], mockShop);
           assert.equal(res.status, 200);
           resolve();
@@ -56,7 +59,7 @@ describe('SHOPS CONTROLLER', () => {
       request(server)
         .get(`/api/v1/shops?query=${mockShop.name}`)
         .end((err, res) => {
-          const { shops } = res.body.data;
+          const { shops } = res.body;
           assert(shops.length > 0);
           assert.equal(res.status, 200);
           resolve();
