@@ -4,7 +4,7 @@
   "description": "PedidosYa challenge API",
   "main": "bin/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon babel-node bin/index.js",
+    "start": "nodemon babel-node bin/index.js",
     "test": "NODE_ENV=test mocha test/**/*.spec.js --require babel-register --exit"
   },
   "author": "Matias Duarte",
